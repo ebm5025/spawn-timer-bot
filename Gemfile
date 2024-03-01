@@ -1,4 +1,4 @@
-ruby "2.7.2"
+ruby "3.3.0"
 
 source 'https://rubygems.org'
 git_source(:github) do |repo_name|
@@ -9,7 +9,7 @@ end
 gem "rake"
 gem "foreman"
 gem "dotenv"
-gem 'discordrb', github: "shardlab/discordrb", branch: "main"
+gem 'discordrb'
 gem 'discordrb-webhooks'
 gem 'chronic'
 gem 'chronic_duration'
@@ -18,8 +18,8 @@ gem 'pg'
 gem 'sequel'
 gem 'activesupport'
 gem 'require_all'
-gem 'dates_from_string'
 gem 'sinatra'
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'

@@ -1,3 +1,4 @@
 .env
 development.db
 dump_and_import.rb
+.sqlite
