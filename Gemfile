@@ -1,4 +1,4 @@
-ruby "3.3.0"
+ruby "2.7.2"
 
 source 'https://rubygems.org'
 git_source(:github) do |repo_name|
