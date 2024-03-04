@@ -1,5 +1,3 @@
-require 'chronic'
-
 class ArgumentParser
   def self.parse(args)
     mob = ""
@@ -7,8 +5,14 @@ class ArgumentParser
 
     # look for time
     arguments = args.dup.to_s
-    
-    dates = Chronic.parse(arguments)
+
+    key_words = []                                     # you can define special separator
+    options = {
+      date_format: :usa,                                            # year,day,month by default year,month,day
+      ordinals: ['nd', 'st', 'th']                                  # a string list that might accompany a day, default none
+    }
+    dates_from_string = DatesFromString.new(key_words, options)     # define DatesFromString object
+    dates = dates_from_string.find_date(arguments)
 
     mob, manual_tod = arguments.split(/[\|\,]/)
 
