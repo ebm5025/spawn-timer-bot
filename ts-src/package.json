@@ -4,7 +4,8 @@
   "description": "Discord bot for tracking NPC spawn timers",
   "main": "dist/bot.js",
   "scripts": {
-    "build": "tsc",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && tsc",
     "start": "node dist/bot.js",
     "dev": "tsx src/bot.ts",
     "test": "vitest run",
