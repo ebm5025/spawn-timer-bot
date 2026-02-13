@@ -28,8 +28,8 @@ describe("TimeParser", () => {
       const now = new Date("2021-05-27T05:57:00Z");
       const result = parseTime("one day ago at noon", now);
       expect(result).not.toBeNull();
-      // Should be yesterday at noon
-      const expected = new Date("2021-05-26T12:00:00Z");
+      // Should be yesterday at noon (local time)
+      const expected = new Date(2021, 4, 26, 12, 0, 0);
       expect(Math.abs(result!.getTime() - expected.getTime())).toBeLessThan(
         60000
       );
